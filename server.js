@@ -1,9 +1,21 @@
-var http = require("http");
+var http = require("http"),
+    url = require("url");
+    queryString = require("querystring");
 
 var server = http.createServer(function(req, res) {
    res.writeHead(200, {"Content-Type": "text/plain"});
-   res.end("Hi!\n");
+
+
+   params = url.parse(req.url, true).query
+   console.log(params);
+   if (params["a"] === "1") {
+     for (;;) {
+       // intentinoal inifinite loop
+     }
+   }
+
+   res.end("Hello\n");
 });
 
-server.listen(3000, "localhost")
+server.listen(8080, "localhost")
 
