@@ -8,7 +8,7 @@ var server = http.createServer(function(req, res) {
 
    params = url.parse(req.url, true).query
    console.log(params);
-   if (params["a"] === "1") {
+   if (params["burden"] === "100") {
      for (;;) {
        // intentinoal inifinite loop
      }
